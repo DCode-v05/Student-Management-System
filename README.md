@@ -1,66 +1,109 @@
-# 🎓 Student Management System
+# Student Management System
 
-A lightweight, web‑based Student Management application built with **Python (Flask)**, **SQLite**, and standard front‑end technologies. Perfect for beginners to learn CRUD operations, database integration, and form handling.
-
----
-
-## 🚀 Features
-
-- 📝 Add, view, update, and delete student records
-- 💾 Uses SQLite for a simple, file-based database
-- 🌐 Clean and responsive web interface
-- ⚙️ Flask-powered backend with HTML/CSS/JS frontend
+## Project Description
+The Student Management System is a lightweight, web-based application designed to manage student records, courses, and attendance efficiently. Built with Python (Flask) and SQLite, it provides a simple yet powerful interface for educational institutions or individuals to perform CRUD operations, manage course enrollments, and track attendance.
 
 ---
 
-## 🧰 Tech Stack
+## Project Details
 
-| Layer       | Technology           |
-|-------------|----------------------|
-| Back-end    | Python, Flask        |
-| Database    | SQLite (`college.db`)|
-| Front-end   | HTML, CSS, JavaScript|
+### Features
+- Add, view, update, and delete student records
+- Manage courses and assign students to courses
+- Mark and visualize student attendance
+- Search and filter student data
+- Responsive web interface for ease of use
+
+### Functional Overview
+- **Student Management:** Register new students, update their details, and view all student records.
+- **Course Management:** Add new courses, assign students to courses, and view all available courses.
+- **Attendance Tracking:** Mark attendance for students in specific courses and visualize attendance data.
+- **Database Integration:** Uses SQLite for persistent, file-based storage.
 
 ---
 
----
-## 🗂️ Project Structure
+## Tech Stack
+- **Backend:** Python, Flask
+- **Database:** SQLite (`college.db`)
+- **Frontend:** HTML, CSS (custom), JavaScript
 
+---
+
+## Getting Started
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/TensoRag/Student-Management-System.git
+cd Student-Management-System
+```
+
+### 2. Install Dependencies
+```bash
+pip install flask matplotlib
+```
+
+### 3. Run the Application
+```bash
+python app.py
+```
+Visit [http://127.0.0.1:5000/](http://127.0.0.1:5000/) in your browser to start using the system.
+
+---
+
+## Usage
+- **Add Student:** Navigate to the 'Add Student' page to register a new student.
+- **View Students:** View, search, and update student records.
+- **Add Course:** Add new courses and assign students.
+- **View Courses:** List all available courses.
+- **Mark Attendance:** Record attendance for students in specific courses.
+- **Attendance Data:** Visualize attendance records for each student.
+
+---
+
+## Project Structure
 ```bash
 Student-Management-System/
 │
 ├── app.py              # Main Flask application
 ├── college.db          # SQLite database
+├── README.md           # Project documentation
 │
 ├── templates/          # HTML templates
-│   ├── base.html
+│   ├── add_course.html
+│   ├── add_student.html
+│   ├── attendance_data.html
 │   ├── index.html
-│   └── form.html
+│   ├── mark_attendance.html
+│   ├── update_student.html
+│   ├── view_courses.html
+│   └── view_students.html
 │
-└── static/             # Static files (CSS/JS)
-    ├── styles.css
-
-    └── scripts.js
+└── static/             # Static files (CSS)
+    └── styles.css
 ```
 
 ---
 
-## 🔧 Getting Started
+## Contributing
 
-### 1. Clone the Repository
+Contributions are welcome! To contribute:
+1. Fork the repository
+2. Create a new branch:
+   ```bash
+   git checkout -b feature/your-feature
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Add your feature"
+   ```
+4. Push to your branch:
+   ```bash
+   git push origin feature/your-feature
+   ```
+5. Open a pull request describing your changes.
 
-```bash
-git clone https://github.com/Denistanb/Student-Management-System.git
-cd Student-Management-System
-```
-### 2. Install Dependencies
+---
 
-```bash
-pip install flask
-```
-### 3. Run the App
-
-```bash
-python app.py
-```
-Visit http://127.0.0.1:5000/ in your browser to start using the system
+## Contact
+- **GitHub:** [https://github.com/TensoRag](https://github.com/TensoRag)
+- **Email:** denistanb05@gmail.com
