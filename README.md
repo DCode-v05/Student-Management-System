@@ -33,7 +33,7 @@ The Student Management System is a lightweight, web-based application designed t
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/TensoRag/Student-Management-System.git
+git clone https://github.com/DCode-v05/Student-Management-System.git
 cd Student-Management-System
 ```
 
@@ -105,5 +105,5 @@ Contributions are welcome! To contribute:
 ---
 
 ## Contact
-- **GitHub:** [TensoRag](https://github.com/TensoRag)
+- **GitHub:** [DCode-v05](https://github.com/DCode-v05)
 - **Email:** denistanb05@gmail.com
