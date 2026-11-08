@@ -47,7 +47,6 @@ def init_db():
         )
     ''')
 
-    # New table to associate students with courses
     cursor.execute(''' 
         CREATE TABLE IF NOT EXISTS student_courses (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -62,41 +61,31 @@ def init_db():
     conn.close()
 
 
-
 @app.route('/')
 def index():
     return render_template('index.html')
 
 def generate_student_id(name, department, enrollment_year):
     if name and department and enrollment_year:
-        # Simple logic to generate student ID
-        year_suffix = str(enrollment_year)[-2:]  # Last two digits of the year
-        department_code = department[:2].upper()  # First two letters of the department
+        year_suffix = str(enrollment_year)[-2:]
+        department_code = department[:2].upper()
 
-        # Connect to the database to find existing students
         conn = sqlite3.connect('college.db')
         cursor = conn.cursor()
 
-        # Fetch existing students in the same department, ordered by name
         cursor.execute('SELECT student_id, name FROM students WHERE department = ? ORDER BY name ASC', (department,))
         existing_students = cursor.fetchall()
 
-        # Prepare to determine the next unique number
         existing_ids = [student[0] for student in existing_students]
         existing_names = [student[1] for student in existing_students]
 
-        # Determine the unique number based on the position of the new name
-        # Insert the new name into the list and sort it
         all_names = existing_names + [name]
         all_names_sorted = sorted(all_names)
 
-        # Find the position of the new name
         position = all_names_sorted.index(name)
 
-        # Calculate the unique number: 1-based index
-        unique_number = position + 1  # Increment the position by 1 to start from 1
+        unique_number = position + 1
 
-        # Create the new student ID
         student_id = f"{year_suffix}{department_code}{unique_number:03d}"
 
         conn.close()
@@ -129,7 +118,6 @@ def add_student():
         course_name = request.form['course_name']
         student_id = request.form['student_id']
 
-        # Connect to database and insert the student record
         conn = sqlite3.connect('college.db')
         cursor = conn.cursor()
         cursor.execute(''' 

@@ -4,20 +4,17 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <title>Add Student</title>
     <script>
-        // Function to generate student ID based on enrollment year and department
         async function generateStudentId() {
             const name = document.getElementById('name').value;
             const department = document.getElementById('department').value;
             const enrollmentYear = document.getElementById('enrollment_year').value;
 
-            // Check if fields are filled
             if (name && department && enrollmentYear) {
                 const response = await fetch(`/generate_student_id?name=${encodeURIComponent(name)}&department=${encodeURIComponent(department)}&enrollment_year=${enrollmentYear}`);
                 
                 if (response.ok) {
                     const data = await response.json();
 
-                    // Auto-fill the Student ID field
                     document.getElementById('id_generation').value = data.student_id;
                 } else {
                     console.error('Failed to generate student ID');
